@@ -4,7 +4,7 @@ Run the `"hello, world"` program on your system. Experiment with leaving out par
 
 ## Omitting Include
 
-The version `hello-no-include.c` omits the `#include` line. It compiles successfully, but emits warnings such as:
+The version `include-missing-hello.c` omits the `#include` line. It compiles successfully, but emits warnings such as:
 
 ```
 warning: incompatible implicit declaration of built-in function ‘printf’
@@ -12,7 +12,7 @@ warning: incompatible implicit declaration of built-in function ‘printf’
 
 ## Omitting Braces
 
-The version `hello-no-braces.c` omits the braces `{` and `}`, and it fails to compile with error:
+The version `braces-missing-hello.c` omits the braces `{` and `}`, and it fails to compile with error:
 
 ```
 hello-no-braces.c:4:5: error: expected declaration specifiers before ‘printf’
@@ -23,7 +23,7 @@ hello-no-braces.c:5: error: expected ‘{’ at end of input
 
 ## Omitting Main Function Parentheses
 
-The version `hello-no-main-parens.c` omits the parentheses `()` that follow the main function, and fails to compile
+The version `main-parens-missing-hello.c` omits the parentheses `()` that follow the main function, and fails to compile
 with error:
 
 ```
