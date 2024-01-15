@@ -9,12 +9,8 @@ int main()
     int n = -12345;
     char s[LEN];
     itoa(n, s);
-    printf("%s\n", s);
-    printf("largest negative:%d\n", INT_MIN);
-    printf("negates to itself:%d\n", -INT_MIN);
-    printf("to negate largest negative, subtract 1: %d\n", INT_MIN - 1);
+    printf("itoa on %d yields %s\n", n, s);
 
-    char t[LEN];
     itoa(INT_MIN, s);
     printf("itoa on largest negative: %s\n", s);
 }
@@ -37,21 +33,12 @@ void reverse(char s[])
 /* itoa: convert n to characters in s */
 void itoa(int n, char s[])
 {
-    int i, sign;
-
-    i = 0;
-    if ((sign = n) < 0) { /* record sign */
-	/* make n positive */
-	if (n == INT_MIN) {
-	    s[i++] = (INT_MAX % 10) + '0' + 1;
-	    n = INT_MAX / 10;
-	} else {
-	    n = -n;
-	}
-    }
-    do {        /* generate digits in reverse order */
-	s[i++] = n % 10 + '0';    /* get next digit */
-    } while ((n /= 10) > 0);      /* delete it */
+    unsigned int m = (n == INT_MIN)? n: -n;	/* gets rid of signed bit */
+    int i = 0;
+    int sign = n;
+    do {				/* generate digits in reverse order */
+	s[i++] = m % 10 + '0';	/* get next digit */
+    } while ((m /= 10) > 0);	/* delete it */
     if (sign < 0)
 	s[i++] = '-';
     s[i] = '\0';
