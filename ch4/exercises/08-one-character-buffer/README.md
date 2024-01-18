@@ -4,6 +4,8 @@ Suppose that there will never be more thna one character of pushback. Modify `ge
 
 ## Solution
 
+The base for the code of this exercise is the solution I wrote to exercise 4-5.
+
 For this exercise, I use the `fmod` function in `<math.h>`. When trying to compile, the following error is issued:
 
 ```
