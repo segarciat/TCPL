@@ -11,8 +11,10 @@ int getop(char s[])
     while (c == ' ' || c == '\t')        /* skip white space */
         s[0] = c = getchar();
     s[1] = '\0';
-    if (!isdigit(c) && c != '.')
-        return c;               /* not a number */
+    if (!isdigit(c) && c != '.') {
+	c = ' ';
+        return s[0];               /* not a number */
+    }
     i = 0;
     if (isdigit(c))         /* collect integer part */
         while (isdigit(s[++i] = c = getchar()))
@@ -21,6 +23,7 @@ int getop(char s[])
         while (isdigit(s[++i] = c = getchar()))
             ;
     s[i] = '\0';
+    c = ' ';
     return NUMBER;
 }
 
