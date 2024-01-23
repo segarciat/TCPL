@@ -10,7 +10,7 @@ int main()
     while((c = getchar()) != EOF) {
 	if (c != '\t') {
 	    putchar(c);
-	    position = (position + 1) % COLUMN_WIDTH;
+	    position = (c == '\n') ? 0 : (position + 1) % COLUMN_WIDTH;
 	} else {
 	    while (position != COLUMN_WIDTH) {
 		putchar(' ');
