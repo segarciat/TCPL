@@ -1,4 +1,4 @@
-#include "syscalls.h"
+#include "syscalls.h" /* read */
 
 /* getchar: unbuffered single character input */
 int getchar(void)

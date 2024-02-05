@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 	s1 = fgets(f1line, MAXLEN, fp1);
 	s2 = fgets(f2line, MAXLEN, fp2);
     } while (s1 != NULL && s2 != NULL && strcmp(f1line, f2line) == 0);
+    fclose(fp1);
+    fclose(fp2);
     /* display whatever is different */
     if (s1 != NULL || s1 != NULL)
         printf("%s:\n%s\n%s:\n%s\n", filename1, (s1 == NULL) ? "": s1, filename2, (s2 == NULL)? "": s2);

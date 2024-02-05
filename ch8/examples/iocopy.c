@@ -1,4 +1,4 @@
-#include "syscalls.h"
+#include "syscalls.h" /* read, write, BUFSIZ */
 
 int main() /* copy input to output */
 {

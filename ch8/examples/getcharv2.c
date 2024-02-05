@@ -1,4 +1,4 @@
-#include "syscalls.h"
+#include "syscalls.h" /* read, BUFSIZ */
 
 /* getchar: simple buffered version */
 int getchar(void)
