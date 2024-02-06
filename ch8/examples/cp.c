@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <fcntl.h>	/* open, O_RDONLY, O_WRONLY, O_RDWR */
-#include "syscalls.h"	/* creat */
+#include <fcntl.h>	/* open, creat, O_RDONLY, O_WRONLY, O_RDWR */
+#include "syscalls.h"
 #define PERMS 0666	/* RW for owner, group, others */
 
 void error(char *, ...);
