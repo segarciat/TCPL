@@ -1,11 +1,17 @@
-#include <fcntl.h>
+#include <fcntl.h>	/* open */
 #include "syscalls.h"
+#include "stdio_excerpt.h"
+#include "iobuffer.h"
 #define PERMS 0666	/* RW for owner, group, others */
 
+/* sample program to demonstrate using this implementation.
+ * It simply opens the file and reads a few bytes from it.
+ * assumption: there is a file test.txt in this directory.
+ * */
 int main()
 {
     FILE *fopen(char *name, char* mode);
-    FILE *fp = fopen("README.md", "r");
+    FILE *fp = fopen("test.txt", "r");
     char ERROR_BUFSZ = 6;
     char errormessage[] = "error\n";
     

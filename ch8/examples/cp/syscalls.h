@@ -1,7 +1,5 @@
 #ifndef _H_SYSCALLS
 #define _H_SYSCALLS
-#include "stdio_excerpt.h"
-#include "iobuffer.h"
 /*
  * (Non-standard) Headers for UNIX syscalls used in Chapter 8
  * 
@@ -23,24 +21,6 @@ int write(int fd, char *buf, int n);
  * int open(char* name, int flags, int perms);
  *
  */
-
-/* close: breaks the connection between a file descriptor and an open file, and frees the file descriptor
- * for use with some other file
- */
-int close(int fd);
-
-/* lseek: sets the current position in the file whose descriptor is fd to offset.
- * the position is taken relative to the location specified by origin.
- * subsequent reading will begin at that position.
- * origin can be 0, 1 or 2 to indicate beginning, current, or end of file.
- *
- * returns new position in the file, or -1 if error
- * standard library fseek is similar, except it takes a FILE *, and return is non-zero if error
- *
- * example: to append to a file, seek to the end: lseek(fd, 0L, 2)
- * example: to get back to beginning ("rewind"): lseek(fd, 0L, 0)
- * */
-long lseek(int fd, long offset, int origin);
 /* creat: creates a file and returns its file descriptor, or -1 if an error occurred
  * if the file already exists, it truncates it to 0 length; not an error to creat a file that already exists.
  *

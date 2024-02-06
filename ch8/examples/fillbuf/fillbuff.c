@@ -1,4 +1,4 @@
-#include <stdlib.h>	/* malloc */
+#include <stdlib.h>	/* malloc, and since it includes stddef, it actually has NULL too */
 #include "syscalls.h"
 #include "stdio_excerpt.h"
 /* _fillbuf: allocate and fill input buffer */
