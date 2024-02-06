@@ -1,5 +1,6 @@
 #include <stdlib.h>	/* free */
 #include "syscalls.h"
+#include "stdio_excerpt.h"
 
 /*
  * fclose: flushes any unwritten data for `stream`, discards any unread buffered input,

@@ -1,5 +1,7 @@
 #include <stdlib.h>	/* free */
-#include "syscalls.h"	/* FILE, _READ, _WRITE, _EOF, _ERR, EOF, write, NULL */
+#include "syscalls.h"
+#include "stdio_excerpt.h"
+#include "iobuffer.h"
 
 /* _flushbuf: when fp is open for write, it writes all buffered data, the given character,
  * and deallocates the memory assigned to the buffer. Returns number of bytes written, or
