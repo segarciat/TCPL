@@ -1,6 +1,8 @@
 #ifndef _H_STDIO_EXCERPT
 #define _H_STDIO_EXCERPT
+#ifndef NULL
 #define NULL		0
+#endif
 #define EOF		(-1)
 #define BUFSIZ		8192
 #define OPEN_MAX	20	/* max files open at once */
